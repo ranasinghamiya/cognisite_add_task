@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
+import RegisterForm from './RegisterForm';
+import LoginPage from './LoginPage';
+import TaskManager from './TaskManager';
 import './App.css';
+import { BrowserRouter,Routes ,Route} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TaskManager/>}></Route>
+        <Route path='/login' element={<LoginPage/>}></Route>
+        <Route path='/register' element={<RegisterForm/>}></Route>
+      </Routes>
+        </BrowserRouter>
+      
     </div>
   );
 }
